@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyDemo : MonoBehaviour
 {
     // todo #1 set up properties
-    public int health = 3;
+    public int health = 100;
     public float speed = 3f;
     public int coins = 3;
+    public Image healthbar;
+    TurretPlatform _turretPlatform;
 
     public List<Transform> waypointList;
 
@@ -53,6 +56,19 @@ public class EnemyDemo : MonoBehaviour
             TargetNextWaypoint();
         }
 
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        healthbar.fillAmount = health / 100f;
+
+        if (healthbar.fillAmount == 0f)
+        {
+            Destroy(gameObject);
+            PlayerStats.Money += 4;
+        }
     }
 
     //-----------------------------------------------------------------------------

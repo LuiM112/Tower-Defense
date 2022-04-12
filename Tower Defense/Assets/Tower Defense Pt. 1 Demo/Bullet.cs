@@ -38,8 +38,16 @@ public class Bullet : MonoBehaviour
     void HitTarget()
     {
         Debug.Log("Hit Enemy");
-        int damage = 5;
-        target.GetComponent<EnemyDemo>().TakeDamage(damage);
+        int damage = 20;
+        if (target.gameObject.tag == "Turret")
+        {
+            target.GetComponent<Targeting>().TakeDamage(damage);
+        }
+        else
+        {
+            target.GetComponent<EnemyDemo>().TakeDamage(damage);
+        }
+        Destroy(this.gameObject);
     }
     
 }

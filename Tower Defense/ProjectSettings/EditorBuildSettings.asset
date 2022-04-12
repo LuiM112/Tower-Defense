@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Tower Defense Pt. 1 Demo/Start.unity
+    guid: 194dff09ff0ecde498517fa2ab8879a7
+  - enabled: 1
+    path: Assets/Tower Defense Pt. 1 Demo/Tower Defense Pt. 1 Demo.unity
+    guid: caac83f8295f7ff47a0677d7133493ef
+  - enabled: 1
+    path: Assets/Tower Defense Pt. 1 Demo/Restart.unity
+    guid: de64d87fcc5aa864486fab119760dda7
+  - enabled: 1
+    path: Assets/Tower Defense Pt. 1 Demo/RestartWin.unity
+    guid: d6207e7b4843a95469748f8d7923de12
   m_configObjects: {}

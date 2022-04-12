@@ -1,11 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Targeting : MonoBehaviour
 {
     public Transform target;
+    public Image healthbar;
+    public int health = 100;
 
     public float range = 15f;
 
@@ -85,5 +89,17 @@ public class Targeting : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+    
+    public void TakeDamage(int damage)
+    {
+        health -= damage - 10;
+
+        healthbar.fillAmount = health / 100f;
+
+        if (healthbar.fillAmount == 0f)
+        {
+            Destroy(gameObject);
+        }
     }
 }
